@@ -1,0 +1,206 @@
+# Calculator
+Calculator
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        
+        <style> 
+        *{ font-family: 'Raleway', sans-serif;}
+            #h{ 
+                text-align: center; 
+                font-size: 40px;
+            } 
+        body{
+            display: flex;
+            justify-content: center;
+        }
+            input[type='radio'],
+            label {
+            cursor: pointer;
+            }
+
+            input[type='radio'] {
+            position: relative;
+            margin-left: 10px;
+            margin-top: -70px;
+            }
+
+            input[type='radio']::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 3px solid lightgreen; 
+            }
+            input[type='radio']:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: lightgreen;
+            transform: translate(-50%, -50%);
+            }
+            #center{
+                
+                width: 850px;
+                height: 700px;
+            }
+            #bakl{
+                margin-left: 30px;
+                text-align: left;
+            }
+            #magr{
+                margin-left: 30px;
+                text-align: left;
+            }
+
+            #tag{
+                width: 800px;
+                height: 35px;
+                background-color: rgb(239, 244, 244);
+            }
+
+            #stepen{
+                margin-bottom: -20px;
+                font-size: 24px;
+                font-family: 'Raleway', sans-serif;
+                margin-left: 30px;
+            }
+            .pin{
+                display: flex;
+                justify-self: start;
+            }
+            #ielts{
+                margin-left: 100px;
+                margin-right: 70px;
+                width: 400px;
+                margin-top: 40px;
+
+            }
+            #gpa{
+                margin-top: 40px;
+                width: 400px;
+            }
+            #selectorforgpa{
+                width: 200px;
+                background-color: rgb(239, 244, 244);
+            }
+            #selectorforielts{
+                width: 200px;
+                background-color: rgb(239, 244, 244);
+            }
+            #list{
+                margin-top: 50px;
+            }
+            #button button{
+              background-color: rgb(116, 207, 116);
+              border: 0 solid black;
+              width: 150px;
+              height: 40px;
+              font-size: 24px;
+              font-family: 'Raleway', sans-serif;
+            border-radius: 2px;       
+            color: white;    
+            }
+            #choose{
+                margin-left: 30px;
+                
+            }
+        </style> 
+    </head> 
+    <body> 
+        
+           <div id="center">
+            <h3 id="h">Расчет верятность поступления</h3> 
+            <div id="list"> 
+                <form id="b1">  
+                    <p id="stepen">Ваша степень</p>
+                    <br>    
+                    <p id="bakl">
+                        <input type="radio" name="radio1" id="answer1" >
+                        <label for="answer1">&nbspБакалавр</label>
+                      </p>
+                      
+                      <p id="magr">
+                        <input type="radio" name="radio1" id="answer2" >
+                        <label for="answer2">&nbspМагистратура</label>
+                      </p>
+            </div> 
+            <div id="choose"> 
+                <label for="choo">Выберите направления:</label> <br>
+                <select name="tag" id="tag"> 
+                    <option value="#">Выберите пункт...</option> 
+                    <option value="">Физика - Математика</option> 
+                    <option value="#">#</option> 
+                </select> 
+            </div> 
+            <div class="pin"> 
+                <div id="ielts">
+                    <label for="Name3">Укажите балл айлтс </label><br> 
+                <select name="ielts" id="selectorforielts">
+                    <option value="80">7.0</option>
+                    <option value="85">7.5</option>
+                    <option value="90">8.0</option>
+                    <option value="95">8.5</option>
+                    <option value="100">9.0</option>
+
+
+                </select>
+                </div>
+                <div id="gpa"><label for="Name4">Укажите ГПА </label><br>
+                    <select name="gpa" id="selectorforgpa">
+                        <option value="100" >4</option>
+                        <option value="90" >3.67</option>
+                        <option value="80" >3.33</option>
+                        <option value="70" >3.0</option>
+                       
+                                      
+                         </select><br>
+                    
+                         
+                        </div> <br>
+               
+        </div>
+            <!-- <div id="list"> 
+                
+                <input type="checkbox" id="l1"> 
+                <label for="l1">мотивационное письмо</label><br> 
+                <input type="checkbox" id="l1"> 
+                <label for="l1">выписка оценок</label><br> 
+                <input type="checkbox" id="l1"> 
+                <label for="l1">TOEFL,IELTS,SAT</label><br> 
+                <input type="checkbox" id="l1"> 
+                <label for="l1">диплом бакалавра,магистра</label><br> 
+                <input type="button" id="button" value="+Добавить"> 
+            </div>  -->
+            <br>
+            <center>
+                <div>
+                <button onclick="calculate()" type="">Рассчитать</button>
+                <p id="tot"> </p>
+                </div>
+           </center>
+           <div></div>
+           <script>
+            function calculate(){
+    const i = document.getElementById('selectorforielts').value;
+    const g = document.getElementById('selectorforgpa').value;
+     let t = (i+g)/2;
+     console.log(i);
+     console.log(g);
+     console.log(t);
+
+    //  let total = t/2;
+     document.getElementById('tot').innerHTML=t + '%';
+}
+        </script>
+    </body> 
+</html>
